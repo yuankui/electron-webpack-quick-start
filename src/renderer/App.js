@@ -1,23 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import FileView from "./FileView";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React3
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo"/>
+                <FileView filePath={"/Users/yuankui/test/test-react/src/index.js"}/>
+            </header>
+        </div>
+    );
 }
 
 export default App;
