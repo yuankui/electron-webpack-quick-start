@@ -1,15 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import FileView from "./FileView";
+import CodeView from "./CodeView";
 
 function App() {
     return (
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo"/>
-                <FileView filePath={"/Users/yuankui/test/test-react/src/index.js"}/>
             </header>
+            <CodeView filePath={"/Users/yuankui/test/test-react/src/index.js"}/>
         </div>
     );
 }
