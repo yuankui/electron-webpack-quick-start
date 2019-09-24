@@ -27,5 +27,10 @@
     "electron-webpack-ts": "^3.2.0",
     "typescript": "^3.6.3",
     "webpack": "~4.35.3"
+  },
+  "electronWebpack": {
+    "renderer": {
+      "webpackConfig": "webpack.renderer.additions.js"
+    }
   }
 }
