@@ -9,6 +9,8 @@
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
   "dependencies": {
+    "@types/electron-devtools-installer": "^2.2.0",
+    "electron-devtools-installer": "^2.2.4",
     "source-map-support": "^0.5.12"
   },
   "devDependencies": {

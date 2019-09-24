@@ -3,6 +3,8 @@
 import { app, BrowserWindow } from 'electron'
 import * as path from 'path'
 import { format as formatUrl } from 'url'
+import installExtension, { REDUX_DEVTOOLS } from 'electron-devtools-installer';
+
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -32,7 +34,7 @@ function createMainWindow() {
   });
 
   window.webContents.on('devtools-opened', () => {
-    window.focus()
+    window.focus();
     setImmediate(() => {
       window.focus()
     })
@@ -52,11 +54,14 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   // on macOS it is common to re-create a window even after all windows have been closed
   if (mainWindow === null) {
-    mainWindow = createMainWindow()
+    mainWindow = createMainWindow();
   }
 });
 
 // create main BrowserWindow when electron is ready
 app.on('ready', () => {
-  mainWindow = createMainWindow()
+  mainWindow = createMainWindow();
+  installExtension(REDUX_DEVTOOLS)
+      .then((name) => console.log(`Added Extension:  ${name}`))
+      .catch((err) => console.log('An error occurred: ', err));
 });
