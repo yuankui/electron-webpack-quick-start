@@ -3,8 +3,7 @@ import * as fs from 'fs';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 import {Controlled as CodeMirror} from 'react-codemirror2';
-require('codemirror/mode/xml/xml');
-require('codemirror/mode/javascript/javascript');
+import 'codemirror/mode/python/python';
 
 interface Props {
     filePath: string,
@@ -26,7 +25,7 @@ export default class CodeView extends React.Component<Props, State> {
         return <CodeMirror
             onBeforeChange={editor => {}}
             options={{
-                mode: 'javascript',
+                mode: 'python',
                 theme: 'material',
                 lineNumbers: true
             }}
